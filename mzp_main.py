@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 
 def categorize(tweet):
-    return "Normal\tあいうえお"
+    return "Normal\t" + tweet.split('\t')[1]
