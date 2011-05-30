@@ -1,0 +1,16 @@
+<testsuite errors="0" failures="1" name="unittest.suite.TestSuite" tests="1" time="0.001">
+  <testcase classname="__main__.MzpTest" name="test_‚¢‚í‚ä‚é•’Ê‚ÌTweet‚ğNormal_tab_tweet‚Æ‚µ‚Ä•Ô‚·" time="0.0010">
+    <failure type="builtins.AssertionError">'Normal\t‚ ‚¢‚¤‚¦‚¨' != None
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 10, in test_‚¢‚í‚ä‚é•’Ê‚ÌTweet‚ğNormal_tab_tweet‚Æ‚µ‚Ä•Ô‚·
+    self.assertEqual("Normal\t‚ ‚¢‚¤‚¦‚¨", result)
+  File "C:\Python32\lib\unittest\case.py", line 643, in assertEqual
+    assertion_func(first, second, msg=msg)
+  File "C:\Python32\lib\unittest\case.py", line 636, in _baseAssertEqual
+    raise self.failureException(msg)
+    </failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
