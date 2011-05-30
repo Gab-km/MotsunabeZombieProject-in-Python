@@ -5,7 +5,7 @@ import xmlrunner
 import mzp_main as mzp
 
 class MzpTest(unittest.TestCase):
-    def test_いわゆる普通のTweetをNormal_tab_tweetとして返す(self):
+    def test_gab_km_tab_あいうえおをNormal_tab_あいうえおとして返す(self):
         result = mzp.categorize("gab_km\tあいうえお")
         self.assertEqual("Normal\tあいうえお", result)
 
