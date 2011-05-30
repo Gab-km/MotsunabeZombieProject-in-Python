@@ -9,6 +9,10 @@ class MzpTest(unittest.TestCase):
         result = mzp.categorize("gab_km\tあいうえお")
         self.assertEqual("Normal\tあいうえお", result)
 
+    def test_Alice_tab_かきくきこをNormal_tab_かきくけことして返す(self):
+        result = mzp.categorize("Alice\tかきくけこ")
+        self.assertEqual("Normal\tかきくけこ", result)
+
 if __name__ == '__main__':
     suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(MzpTest)
