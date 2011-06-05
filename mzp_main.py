@@ -2,6 +2,7 @@
 import re
 
 def categorize(tweet):
-    if re.search("#\w", tweet):
-        return "!Hashtag\t" + tweet.split('\t')[1]
-    return "Normal\t" + tweet.split('\t')[1]
+    body = tweet.split('\t')[1]
+    if re.search("#\w", body):
+        return "!Hashtag\t" + body
+    return "Normal\t" + body

@@ -1,5 +1,5 @@
-<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="3" time="0.001">
-  <testcase classname="__main__.MzpTest" name="test_Alice_tab_かきくきこをNormal_tab_かきくけことして返す" time="0.0010"></testcase>
+<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="3" time="0.000">
+  <testcase classname="__main__.MzpTest" name="test_Alice_tab_かきくきこをNormal_tab_かきくけことして返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_gab_km_tab_あいうえおをNormal_tab_あいうえおとして返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000"></testcase>
   <system-out><![CDATA[]]></system-out>
