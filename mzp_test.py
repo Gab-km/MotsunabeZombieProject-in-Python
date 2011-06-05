@@ -13,6 +13,10 @@ class MzpTest(unittest.TestCase):
         result = mzp.categorize("Alice\tかきくけこ")
         self.assertEqual("Normal\tかきくけこ", result)
 
+    def test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う(self):
+        result = mzp.categorize("gab_km\tほげ #fuga")
+        self.assertEqual("!Hashtag\tほげ #fuga", result)
+
 if __name__ == '__main__':
     suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(MzpTest)
