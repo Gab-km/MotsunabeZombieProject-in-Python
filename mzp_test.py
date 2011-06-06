@@ -5,13 +5,9 @@ import xmlrunner
 import mzp_main as mzp
 
 class MzpTest(unittest.TestCase):
-    def test_gab_km_tab_あいうえおをNormal_tab_あいうえおとして返す(self):
+    def test_普通のTweetを普通として扱う(self):
         result = mzp.categorize("gab_km\tあいうえお")
         self.assertEqual("Normal\tあいうえお", result)
-
-    def test_Alice_tab_かきくきこをNormal_tab_かきくけことして返す(self):
-        result = mzp.categorize("Alice\tかきくけこ")
-        self.assertEqual("Normal\tかきくけこ", result)
 
     def test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う(self):
         result = mzp.categorize("gab_km\tほげ #fuga")
