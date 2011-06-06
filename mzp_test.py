@@ -23,19 +23,19 @@ class MzpTest(unittest.TestCase):
         self.assertEqual("Mention\tふげ @Alice ひげ", result)
 
     def test_ドット付きリプライTweetもメンションとして扱う(self):
-        result = mzp.categorize("gab_km\t.@Alice へげ")
+        result = mzp.categorize(self.posted_time + "gab_km\t.@Alice へげ")
         self.assertEqual("Mention\t.@Alice へげ", result)
 
     def test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す(self):
-        result = mzp.categorize("gab_km\t@Alice ほげ #bar")
+        result = mzp.categorize(self.posted_time + "gab_km\t@Alice ほげ #bar")
         self.assertEqual("!Hashtag,Reply\t@Alice ほげ #bar", result)
 
     def test_リプライとメンションTweetでReply_Mentionの順で返す(self):
-        result = mzp.categorize("gab_km\t@Alice @Bob はげ")
+        result = mzp.categorize(self.posted_time + "gab_km\t@Alice @Bob はげ")
         self.assertEqual("Reply,Mention\t@Alice @Bob はげ", result)
 
     def test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す(self):
-        result = mzp.categorize("gab_km\tふげ @Alice #blur")
+        result = mzp.categorize(self.posted_time + "gab_km\tふげ @Alice #blur")
         self.assertEqual("!Hashtag,Mention\tふげ @Alice #blur", result)
 
 if __name__ == '__main__':
