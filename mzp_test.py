@@ -21,6 +21,10 @@ class MzpTest(unittest.TestCase):
         result = mzp.categorize("gab_km\t@Alice はげ")
         self.assertEqual("Reply\t@Alice はげ", result)
 
+    def test_メンションTweetをMention_tab_tweetbodyとして返す(self):
+        result = mzp.categorize("gab_km\tふげ @Alice ひげ")
+        self.assertEqual("Mention\tふげ @Alice ひげ", result)
+
 if __name__ == '__main__':
     suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(MzpTest)
