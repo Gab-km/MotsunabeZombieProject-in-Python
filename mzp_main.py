@@ -7,4 +7,6 @@ def categorize(tweet):
         return "!Hashtag\t" + body
     if re.search("^@\w", body):
         return "Reply\t" + body
+    if re.search("@\w", body):
+        return "Mention\t" + body
     return "Normal\t" + body
