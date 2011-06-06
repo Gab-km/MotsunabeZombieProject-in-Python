@@ -5,8 +5,9 @@ import xmlrunner
 import mzp_main as mzp
 
 class MzpTest(unittest.TestCase):
+    posted_time = "2011/06/07 00:36:10\t"
     def test_普通のTweetを普通として扱う(self):
-        result = mzp.categorize("gab_km\tあいうえお")
+        result = mzp.categorize(self.posted_time + "gab_km\tあいうえお")
         self.assertEqual("Normal\tあいうえお", result)
 
     def test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う(self):
