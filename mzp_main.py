@@ -3,10 +3,13 @@ import re
 
 def categorize(tweet):
     body = tweet.split('\t')[1]
+    category = []
     if re.search("#\w", body):
-        return "!Hashtag\t" + body
+        category.append("!Hashtag")
     if re.search("^@\w", body):
-        return "Reply\t" + body
-    if re.search("@\w", body):
-        return "Mention\t" + body
+        category.append("Reply")
+    elif re.search("@\w", body):
+        category.append("Mention")
+    if len(category) > 0:
+        return ','.join(category) + "\t" + body
     return "Normal\t" + body

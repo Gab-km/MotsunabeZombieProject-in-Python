@@ -1,25 +1,8 @@
-<testsuite errors="0" failures="1" name="unittest.suite.TestSuite" tests="7" time="0.010">
+<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="7" time="0.001">
   <testcase classname="__main__.MzpTest" name="test_Alice_tab_かきくきこをNormal_tab_かきくけことして返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_gab_km_tab_あいうえおをNormal_tab_あいうえおとして返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0100">
-    <failure type="builtins.AssertionError">'!Hashtag,Reply\t@Alice ほげ #bar' != '!Hashtag\t@Alice ほげ #bar'
-- !Hashtag,Reply	@Alice ほげ #bar
-?         ------
-+ !Hashtag	@Alice ほげ #bar
-
-  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
-    function()
-  File "mzp_test.py", line 34, in test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す
-    self.assertEqual("!Hashtag,Reply\t@Alice ほげ #bar", result)
-  File "C:\Python32\lib\unittest\case.py", line 643, in assertEqual
-    assertion_func(first, second, msg=msg)
-  File "C:\Python32\lib\unittest\case.py", line 1060, in assertMultiLineEqual
-    self.fail(self._formatMessage(msg, standardMsg))
-  File "C:\Python32\lib\unittest\case.py", line 511, in fail
-    raise self.failureException(msg)
-    </failure>
-  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_メンションTweetをMention_tab_tweetbodyとして返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_リプライTweetをReply_tab_tweetbodyとして返す" time="0.0000"></testcase>
