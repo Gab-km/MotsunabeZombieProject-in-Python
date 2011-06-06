@@ -37,6 +37,10 @@ class MzpTest(unittest.TestCase):
         result = mzp.categorize("gab_km\t@Alice @Bob はげ")
         self.assertEqual("Reply,Mention\t@Alice @Bob はげ", result)
 
+    def test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す(self):
+        result = mzp.categorize("gab_km\tふげ @Alice #blur")
+        self.assertEqual("!Hashtag,Mention\tふげ @Alice #blur", result)
+
 if __name__ == '__main__':
     suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(MzpTest)
