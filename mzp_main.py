@@ -8,7 +8,7 @@ def categorize(tweet):
         category.append("!Hashtag")
     if re.search("^@\w", body):
         category.append("Reply")
-    elif re.search("@\w", body):
+    if re.search(".@\w", body):
         category.append("Mention")
     if len(category) > 0:
         return ','.join(category) + "\t" + body
