@@ -38,6 +38,38 @@ class MzpTest(unittest.TestCase):
         result = mzp.categorize(self.posted_time + "gab_km\tふげ @Alice #blur")
         self.assertEqual("!Hashtag,Mention\tふげ @Alice #blur", result)
 
+    def test_Web上からツイートを取得して振り分けられる(self):
+        url = "http://tddbc.heroku.com/mzp/public_timeline"
+        result = mzp.categorize_web_tweet(url)
+        self.assertListEqual(self.expected, result)
+
+    expected = ["Normal\t試しにつぶやいてみるわ",
+                "Reply\t@Bob これがreplyね",
+                "Mention\tmentionは@Bobでいいのかしら？",
+                "Reply\t@Alice 頑張っているみたいだね。",
+                "Normal\t僕もぼちぼち作業しようかな。",
+                "Normal\tReTweetって2種類あるのね、知らなかったわ…",
+                "!Hashtag\t僕は#hashtagを試しておこう。",
+                "Reply,Mention\t@Charlie @Alice " + \
+                    "明日の13時から詳細を詰めたいんだけど、空いてるかな？",
+                "Normal\tとりあえずはこんな感じかしら。",
+                "Reply\t@Bob 私は空いてるわ",
+                "Normal\t3時のおやつタイムだ！",
+                "Normal\tおっと、Aliceから返事がきてる。" + \
+                    "…ふむふむ、となるとCharlie待ちかな。",
+                "Reply,Mention\t@Bob 空いてるよ。" + \
+                    "部屋は君か@Aliceが押さえておいてくれると助かるかな。",
+                "Reply,Mention\t@Charlie @Alice " + \
+                    "部屋はすでに押さえているよ。" + \
+                    "メールを送ったから場所の確認よろしく！",
+                "Normal\t夜更かしは肌に悪いから寝るわ",
+                "Mention\tふむ RT @Alice: ReTweetって2種類あるのね",
+                "Normal\tよーし、短縮URLについて調べるぞー",
+                "!Hashtag\t本日つぶやいたユーザの記録 2011-04-01 #kiroku",
+                "Mention\tMT @Alice: これも非公式RTね",
+                "!Hashtag,Mention\t2011-04-01 @Aliceのつぶやき 7件 #kiroku"
+                ]
+
 if __name__ == '__main__':
     suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(MzpTest)
