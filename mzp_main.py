@@ -2,7 +2,7 @@
 import re
 
 def categorize(tweet):
-    body = tweet.split('\t')[1]
+    [posted_time, screen_name, body] = tweet.split('\t')
     category = []
     if re.search("#\w", body):
         category.append("!Hashtag")

@@ -1,28 +1,75 @@
-<testsuite errors="0" failures="1" name="unittest.suite.TestSuite" tests="8" time="0.002">
-  <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0010"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_メンションTweetをMention_tab_tweetbodyとして返す" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_リプライTweetをReply_tab_tweetbodyとして返す" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_リプライとメンションTweetでReply_Mentionの順で返す" time="0.0000"></testcase>
-  <testcase classname="__main__.MzpTest" name="test_普通のTweetを普通として扱う" time="0.0010">
-    <failure type="builtins.AssertionError">'Normal\tあいうえお' != 'Normal\tgab_km'
-- Normal	あいうえお
-+ Normal	gab_km
-
+<testsuite errors="7" failures="0" name="unittest.suite.TestSuite" tests="8" time="0.002">
+  <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0010">
+    <error type="builtins.ValueError">need more than 2 values to unpack
   File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
     function()
-  File "mzp_test.py", line 11, in test_普通のTweetを普通として扱う
-    self.assertEqual("Normal\tあいうえお", result)
-  File "C:\Python32\lib\unittest\case.py", line 643, in assertEqual
-    assertion_func(first, second, msg=msg)
-  File "C:\Python32\lib\unittest\case.py", line 1060, in assertMultiLineEqual
-    self.fail(self._formatMessage(msg, standardMsg))
-  File "C:\Python32\lib\unittest\case.py", line 511, in fail
-    raise self.failureException(msg)
-    </failure>
+  File "mzp_test.py", line 26, in test_ドット付きリプライTweetもメンションとして扱う
+    result = mzp.categorize("gab_km\t.@Alice へげ")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
   </testcase>
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す" time="0.0000">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 38, in test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す
+    result = mzp.categorize("gab_km\tふげ @Alice #blur")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 30, in test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す
+    result = mzp.categorize("gab_km\t@Alice ほげ #bar")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 14, in test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う
+    result = mzp.categorize("gab_km\tほげ #fuga")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_メンションTweetをMention_tab_tweetbodyとして返す" time="0.0000">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 22, in test_メンションTweetをMention_tab_tweetbodyとして返す
+    result = mzp.categorize("gab_km\tふげ @Alice ひげ")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_リプライTweetをReply_tab_tweetbodyとして返す" time="0.0010">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 18, in test_リプライTweetをReply_tab_tweetbodyとして返す
+    result = mzp.categorize("gab_km\t@Alice はげ")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_リプライとメンションTweetでReply_Mentionの順で返す" time="0.0000">
+    <error type="builtins.ValueError">need more than 2 values to unpack
+  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
+    function()
+  File "mzp_test.py", line 34, in test_リプライとメンションTweetでReply_Mentionの順で返す
+    result = mzp.categorize("gab_km\t@Alice @Bob はげ")
+  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
+    [posted_time, screen_name, body] = tweet.split('\t')
+    </error>
+  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_普通のTweetを普通として扱う" time="0.0000"></testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
