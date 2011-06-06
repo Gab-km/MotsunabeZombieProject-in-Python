@@ -19,7 +19,7 @@ class MzpTest(unittest.TestCase):
         self.assertEqual("Reply\t@Alice はげ", result)
 
     def test_メンションTweetをMention_tab_tweetbodyとして返す(self):
-        result = mzp.categorize("gab_km\tふげ @Alice ひげ")
+        result = mzp.categorize(self.posted_time + "gab_km\tふげ @Alice ひげ")
         self.assertEqual("Mention\tふげ @Alice ひげ", result)
 
     def test_ドット付きリプライTweetもメンションとして扱う(self):
