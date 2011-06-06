@@ -1,5 +1,5 @@
-<testsuite errors="7" failures="0" name="unittest.suite.TestSuite" tests="8" time="0.002">
-  <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0010">
+<testsuite errors="6" failures="0" name="unittest.suite.TestSuite" tests="8" time="0.001">
+  <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0000">
     <error type="builtins.ValueError">need more than 2 values to unpack
   File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
     function()
@@ -19,7 +19,7 @@
     [posted_time, screen_name, body] = tweet.split('\t')
     </error>
   </testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000">
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0010">
     <error type="builtins.ValueError">need more than 2 values to unpack
   File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
     function()
@@ -29,16 +29,7 @@
     [posted_time, screen_name, body] = tweet.split('\t')
     </error>
   </testcase>
-  <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000">
-    <error type="builtins.ValueError">need more than 2 values to unpack
-  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
-    function()
-  File "mzp_test.py", line 14, in test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う
-    result = mzp.categorize("gab_km\tほげ #fuga")
-  File "D:\Coding\Python\MotsunabeZombieProject\mzp_main.py", line 5, in categorize
-    [posted_time, screen_name, body] = tweet.split('\t')
-    </error>
-  </testcase>
+  <testcase classname="__main__.MzpTest" name="test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_メンションTweetをMention_tab_tweetbodyとして返す" time="0.0000">
     <error type="builtins.ValueError">need more than 2 values to unpack
   File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
@@ -49,7 +40,7 @@
     [posted_time, screen_name, body] = tweet.split('\t')
     </error>
   </testcase>
-  <testcase classname="__main__.MzpTest" name="test_リプライTweetをReply_tab_tweetbodyとして返す" time="0.0010">
+  <testcase classname="__main__.MzpTest" name="test_リプライTweetをReply_tab_tweetbodyとして返す" time="0.0000">
     <error type="builtins.ValueError">need more than 2 values to unpack
   File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
     function()

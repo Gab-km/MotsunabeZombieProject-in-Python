@@ -11,7 +11,7 @@ class MzpTest(unittest.TestCase):
         self.assertEqual("Normal\tあいうえお", result)
 
     def test_ハッシュタグ付きのTweetをハッシュタグ付きとして扱う(self):
-        result = mzp.categorize("gab_km\tほげ #fuga")
+        result = mzp.categorize(self.posted_time + "gab_km\tほげ #fuga")
         self.assertEqual("!Hashtag\tほげ #fuga", result)
 
     def test_リプライTweetをReply_tab_tweetbodyとして返す(self):
