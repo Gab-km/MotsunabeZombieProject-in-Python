@@ -1,12 +1,5 @@
-<testsuite errors="1" failures="0" name="unittest.suite.TestSuite" tests="9" time="0.001">
-  <testcase classname="__main__.MzpTest" name="test_Web上からツイートを取得して振り分けられる" time="0.0010">
-    <error type="builtins.AttributeError">'module' object has no attribute 'categorize_web_tweet'
-  File "C:\Python32\lib\unittest\case.py", line 387, in _executeTestPart
-    function()
-  File "mzp_test.py", line 43, in test_Web上からツイートを取得して振り分けられる
-    result = mzp.categorize_web_tweet(url)
-    </error>
-  </testcase>
+<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="9" time="0.591">
+  <testcase classname="__main__.MzpTest" name="test_Web上からツイートを取得して振り分けられる" time="0.5910"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000"></testcase>
