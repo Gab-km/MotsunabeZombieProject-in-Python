@@ -1,5 +1,5 @@
-<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="9" time="0.591">
-  <testcase classname="__main__.MzpTest" name="test_Web上からツイートを取得して振り分けられる" time="0.5910"></testcase>
+<testsuite errors="0" failures="0" name="unittest.suite.TestSuite" tests="9" time="0.599">
+  <testcase classname="__main__.MzpTest" name="test_Web上からツイートを取得して振り分けられる" time="0.5990"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ドット付きリプライTweetもメンションとして扱う" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグとメンションTweetでHashtag_Mentionの順で返す" time="0.0000"></testcase>
   <testcase classname="__main__.MzpTest" name="test_ハッシュタグとリプライTweetでHashtag_Replyの順で返す" time="0.0000"></testcase>
